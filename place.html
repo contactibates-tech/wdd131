@@ -22,9 +22,11 @@
 
   <main>
 
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-heading">
+      <h2 id="hero-heading" class="visually-hidden">Hero image and key facts</h2>
+
       <picture>
-        <source media="(min-width: 640px)" srcset="images/hero-bahamas-wide.webp">
+        <source media="(min-width: 640px)" srcset="images/hero-bahamas-wide.webp 1200w" sizes="(min-width: 640px) 100vw, 100vw">
         <img src="images/hero-bahamas-mobile.webp" srcset="images/hero-bahamas-mobile.webp 900w, images/hero-bahamas-wide.webp 1600w" sizes="100vw" alt="Turquoise water, white sand, and leaning palm trees on a Bahamian beach" width="1600" height="700">
       </picture>
 
