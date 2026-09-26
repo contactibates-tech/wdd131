@@ -1,0 +1,315 @@
+/* ==========================================================================
+   WDD 131 — W03 Place Page — The Bahamas
+   Color scheme drawn from the Bahamian flag: aquamarine, gold, black
+   Type: Baloo 2 (headings) + Mulish (body)
+   Layout follows the assignment wireframe:
+     mobile  -> Title, small image, Data box, Weather box (stacked)
+     wide    -> Title, large image with Data + Weather boxes overlaid
+   ========================================================================== */
+
+:root {
+  --clr-turquoise: #00778b;
+  --clr-turquoise-dark: #01515f;
+  --clr-gold: #ffc72c;
+  --clr-black: #101010;
+  --clr-sand: #f7f1e1;
+  --clr-white: #ffffff;
+  --clr-text: #1c1c1c;
+
+  --font-heading: "Baloo 2", "Segoe UI", sans-serif;
+  --font-body: "Mulish", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--clr-text);
+  background-color: var(--clr-white);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+/* ---------- Header ---------- */
+
+header {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  position: relative;
+  padding: 1rem 1rem;
+}
+
+.page-title {
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+#menu {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--clr-white);
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#menu::before {
+  content: "\2261";
+}
+
+#menu.open::before {
+  content: "\00D7";
+}
+
+#menu:hover,
+#menu:focus-visible {
+  background-color: var(--clr-gold);
+  color: var(--clr-black);
+}
+
+nav {
+  background-color: #1c1c1c;
+  margin: 1rem -1rem -1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+}
+
+nav ul.open {
+  display: flex;
+}
+
+nav li {
+  border-top: 1px solid #333;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--clr-white);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: var(--clr-gold);
+  color: var(--clr-black);
+}
+
+/* ---------- Hero + info boxes (mobile: stacked below image) ---------- */
+
+.hero img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.info-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem 1rem;
+}
+
+.info-box {
+  background-color: var(--clr-sand);
+  border: 2px solid var(--clr-turquoise);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.info-box h2 {
+  color: var(--clr-turquoise-dark);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.weather-icon-mobile {
+  margin: 0 auto 0.75rem;
+}
+
+.info-box dl {
+  margin: 0;
+}
+
+.info-box dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px dashed #d8cfbd;
+}
+
+.info-box dl div:last-child {
+  border-bottom: none;
+}
+
+.info-box dt {
+  font-weight: 700;
+  color: var(--clr-turquoise-dark);
+}
+
+.info-box dd {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Emoticon after the "Weather" heading only appears in the wide view */
+.weather-box h2::after {
+  content: none;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+#currentyear {
+  font-weight: 600;
+  color: var(--clr-gold);
+}
+
+#lastModified {
+  color: var(--clr-turquoise);
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   LARGER VIEW — media query
+   Hero image fills a tall banner; Data box floats top-left, Weather box
+   floats bottom-right, both overlaid directly on the image per the wireframe.
+   ========================================================================== */
+
+@media only screen and (min-width: 40rem) {
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  .page-title {
+    text-align: left;
+    font-size: 1.6rem;
+  }
+
+  #menu {
+    display: none;
+  }
+
+  nav {
+    background-color: transparent;
+    margin: 0;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  nav li {
+    border-top: none;
+  }
+
+  nav a {
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 34rem;
+  }
+
+  .hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .info-boxes {
+    position: absolute;
+    inset: 0;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 0;
+  }
+
+  .info-box {
+    background-color: rgba(247, 241, 225, 0.94);
+    width: 17rem;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+  }
+
+  .data-box {
+    align-self: flex-start;
+  }
+
+  .weather-box {
+    align-self: flex-end;
+  }
+
+  .info-box h2 {
+    text-align: left;
+  }
+
+  /* Mobile SVG icon is swapped for a pseudo-element emoticon in the wide view */
+  .weather-icon-mobile {
+    display: none;
+  }
+
+  .weather-box h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .weather-box h2::after {
+    content: "\26C5";
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+}
