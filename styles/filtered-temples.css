@@ -1,0 +1,219 @@
+/* ==========================================================================
+   WDD 131 — W04 Filtered Temple Album — MOBILE FIRST
+   Palette: ink navy, near-black nav, warm sand, ochre accent, moss
+   Type: Encode Sans Semi Expanded
+   ========================================================================== */
+
+:root {
+  --ink-navy: #1f3a5f;
+  --nav-dark: #2b2b2b;
+  --sand: #f7f7f5;
+  --sand-dark: #d9d9d4;
+  --ochre: #c98a3e;
+  --moss: #b8cf6a;
+  --text: #2b2b2b;
+
+  --font-body: "Encode Sans Semi Expanded", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------- Header ---------- */
+
+header {
+  background-color: var(--ink-navy);
+  color: #ffffff;
+  position: relative;
+  padding: 1rem 1rem;
+}
+
+.site-title {
+  display: block;
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+/* Hamburger button — mobile only */
+#menu {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#menu::before {
+  content: "\2261"; /* ≡ hamburger */
+}
+
+#menu.open::before {
+  content: "\00D7"; /* × close */
+}
+
+#menu:hover,
+#menu:focus-visible {
+  background-color: var(--ochre);
+}
+
+/* Nav — hidden by default on mobile */
+nav {
+  background-color: var(--nav-dark);
+  margin: 1rem -1rem -1rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+}
+
+nav ul.open {
+  display: flex;
+}
+
+nav li {
+  border-top: 1px solid #3d3d3d;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--sand);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: var(--ochre);
+  color: #ffffff;
+}
+
+nav a.active {
+  background-color: var(--ink-navy);
+  color: var(--moss);
+  font-weight: 700;
+}
+
+/* ---------- Main ---------- */
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 1.75rem;
+  text-align: center;
+  color: var(--ink-navy);
+  margin: 0 0 0.5rem;
+}
+
+.result-count {
+  text-align: center;
+  margin: 0 0 1.5rem;
+  font-size: 0.9rem;
+  color: var(--ochre);
+  font-weight: 600;
+}
+
+/* CSS Grid — single column on mobile */
+.album {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+figure {
+  margin: 0;
+  border: 1px solid var(--sand-dark);
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: var(--sand);
+}
+
+figure img {
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+}
+
+figcaption {
+  padding: 0.85rem 1rem 1rem;
+  background-color: #ffffff;
+  border-top: 1px solid var(--sand-dark);
+}
+
+figcaption h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+  color: var(--ink-navy);
+}
+
+figcaption p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+}
+
+figcaption .location {
+  font-style: italic;
+  color: #555;
+}
+
+figcaption .label {
+  font-weight: 700;
+  color: var(--ink-navy);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  background-color: var(--ink-navy);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+#currentyear {
+  font-weight: 600;
+}
+
+#lastModified {
+  color: var(--moss);
+  font-size: 0.8rem;
+}
