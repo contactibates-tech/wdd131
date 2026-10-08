@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Submitted | WDD 131 – Isaac Bates</title>
+  <meta name="description" content="Confirmation that your product review was submitted. Built for WDD 131 – Dynamic Web Fundamentals by Isaac Bates.">
+  <meta name="author" content="Isaac Bates">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/form.css">
+  <script src="scripts/products.js" defer></script>
+  <script src="scripts/review.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <span class="site-title">Product Reviews</span>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="place.html">Place</a></li>
+        <li><a href="filtered-temples.html">Temples</a></li>
+        <li><a href="form.html">Review</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Thank You!</h1>
+    <p class="lead">Your review was submitted successfully.</p>
+
+    <p class="counter">Reviews completed on this device: <strong id="review-count">0</strong></p>
+
+    <section class="summary-card" aria-labelledby="summary-heading">
+      <h2 id="summary-heading">Your Review</h2>
+      <dl id="summary"></dl>
+    </section>
+
+    <p><a class="button-link" href="form.html">Write another review</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentyear"></span> &nbsp;Isaac Bates &nbsp;⛰&nbsp; North Logan, Utah</p>
+    <p id="lastModified"></p>
+  </footer>
+
+</body>
+</html>

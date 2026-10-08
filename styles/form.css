@@ -1,0 +1,407 @@
+/* ==========================================================================
+   WDD 131 — W05 Product Review Form
+   Palette: midnight blue, electric amber, cool paper
+   Type: Exo 2 (headings) + Source Sans 3 (body)
+   ========================================================================== */
+
+:root {
+  --midnight: #14213d;
+  --midnight-soft: #24365e;
+  --amber: #fca311;
+  --amber-deep: #b36b00;
+  --paper: #f3f5fa;
+  --white: #ffffff;
+  --text: #14213d;
+  --muted: #4a5568;
+  --border: #b8c0d0;
+  --error: #b00020;
+
+  --font-heading: "Exo 2", "Segoe UI", sans-serif;
+  --font-body: "Source Sans 3", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--text);
+  background-color: var(--paper);
+  line-height: 1.6;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Header ---------- */
+
+header {
+  background-color: var(--midnight);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
+}
+
+.site-title {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 1.25rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a[aria-current="page"] {
+  border-bottom-color: var(--amber);
+}
+
+/* ---------- Main ---------- */
+
+main {
+  max-width: 36rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+  color: var(--midnight);
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.lead {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.req {
+  color: var(--error);
+  font-weight: 700;
+}
+
+/* ---------- Form ---------- */
+
+form {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--amber);
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
+}
+
+label,
+legend {
+  font-weight: 700;
+  padding: 0;
+}
+
+select,
+input[type="date"],
+input[type="text"],
+textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--text);
+  background-color: var(--white);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  padding: 0.65rem 0.75rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 7rem;
+}
+
+select:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 1px;
+  border-color: var(--midnight);
+}
+
+input:user-invalid,
+select:user-invalid {
+  border-color: var(--error);
+}
+
+/* ---------- Star rating (radio inputs) ---------- */
+
+.stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.star {
+  position: relative;
+}
+
+.star input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.star label {
+  display: block;
+  font-size: 2.4rem;
+  line-height: 1;
+  padding: 0.15rem 0.2rem;
+  color: #8a93a6;
+  cursor: pointer;
+  font-weight: 400;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+/* Fill the selected star and every star before it */
+.star:has(input:checked) label,
+.star:has(~ .star input:checked) label {
+  color: var(--amber-deep);
+}
+
+/* Hover preview */
+.star:hover label,
+.star:has(~ .star:hover) label {
+  color: var(--amber);
+}
+
+.star:hover label {
+  transform: scale(1.1);
+}
+
+.star:has(input:focus-visible) label {
+  outline: 3px solid var(--midnight);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ---------- Checkboxes ---------- */
+
+.checks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 2.75rem;
+}
+
+.check input {
+  width: 1.3rem;
+  height: 1.3rem;
+  accent-color: var(--midnight);
+  flex-shrink: 0;
+}
+
+.check label {
+  font-weight: 400;
+  cursor: pointer;
+  flex: 1;
+}
+
+/* ---------- Submit ---------- */
+
+input[type="submit"],
+.button-link {
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  color: var(--midnight);
+  background-color: var(--amber);
+  border: 2px solid var(--amber);
+  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+input[type="submit"] {
+  width: 100%;
+}
+
+input[type="submit"]:hover,
+.button-link:hover {
+  background-color: var(--midnight);
+  border-color: var(--midnight);
+  color: var(--white);
+}
+
+input[type="submit"]:focus-visible,
+.button-link:focus-visible {
+  outline: 3px solid var(--midnight);
+  outline-offset: 3px;
+}
+
+/* ---------- Review confirmation page ---------- */
+
+.counter {
+  background-color: var(--midnight);
+  color: var(--white);
+  border-left: 5px solid var(--amber);
+  border-radius: 6px;
+  padding: 0.85rem 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.counter strong {
+  color: var(--amber);
+  font-size: 1.3rem;
+}
+
+.summary-card {
+  background-color: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.summary-card dl {
+  margin: 0;
+}
+
+.summary-card dl div {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e3e7f0;
+}
+
+.summary-card dl div:last-child {
+  border-bottom: none;
+}
+
+.summary-card dt {
+  font-weight: 700;
+  color: var(--midnight-soft);
+}
+
+.summary-card dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  background-color: var(--midnight);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+#currentyear {
+  font-weight: 700;
+  color: var(--amber);
+}
+
+#lastModified {
+  color: #c9d3ea;
+  font-size: 0.85rem;
+}
+
+/* ---------- Larger view ---------- */
+
+@media only screen and (min-width: 40rem) {
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    text-align: left;
+  }
+
+  .site-title {
+    margin-bottom: 0;
+  }
+
+  main {
+    margin-top: 3rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  form {
+    padding: 2rem;
+  }
+
+  .checks {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  input[type="submit"] {
+    width: auto;
+    align-self: flex-start;
+    padding-inline: 2.5rem;
+  }
+}
