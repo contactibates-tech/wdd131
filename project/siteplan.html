@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Site plan for the JM Part Standards Hub: purpose, scenarios, color schema, typography, and wireframes.">
+  <title>JM Part Standards Hub | Site Plan</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/siteplan.css">
+</head>
+<body>
+  <header>
+    <img src="images/logo.jpg" alt="JM Part Standards Hub logo" width="64" height="64">
+    <div>
+      <h1>JM Part Standards Hub</h1>
+      <p>Website Site Plan | WDD 131 Project</p>
+    </div>
+  </header>
+
+  <nav aria-label="Site plan sections">
+    <ul>
+      <li><a href="#name">Site Name</a></li>
+      <li><a href="#purpose">Site Purpose</a></li>
+      <li><a href="#scenarios">Scenarios</a></li>
+      <li><a href="#colors">Color Schema</a></li>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#wireframes">Wireframes</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="name">
+      <h2>Site Name</h2>
+      <p><strong>JM Part Standards Hub</strong></p>
+      <p>The name tells my team exactly what the site is: one place for the build standards and quality requirements of the parts we make. "JM" ties it to our company, and "Hub" signals that every part lives in one spot.</p>
+      <p>Optional domain availability: <code>jm-part-standards.com</code></p>
+    </section>
+
+    <section id="purpose">
+      <h2>Site Purpose</h2>
+      <p>The site gives my team an easy way to learn how to build parts correctly. Visitors pick a part from an interactive list and go to a page with that part's standards and quality requirements.</p>
+      <ul>
+        <li><strong>Subject:</strong> the company specialty department's quality standards.</li>
+        <li><strong>Content:</strong> an interactive part list, plus one detail page per part covering standards and quality requirements.</li>
+        <li><strong>Reason:</strong> a clear reference helps the team build parts properly the first time, which increases productivity and quality.</li>
+      </ul>
+    </section>
+
+    <section id="scenarios">
+      <h2>Scenarios</h2>
+      <ul>
+        <li>I am about to build a part. What standards does it have to meet?</li>
+        <li>How do I find one specific part without scrolling through everything?</li>
+        <li>What quality requirements will my finished part be checked against?</li>
+        <li>I am new to the team. Where do I start learning how we build parts?</li>
+      </ul>
+    </section>
+
+    <section id="colors">
+      <h2>Color Schema</h2>
+      <p>These colors are applied to this document and will carry over to the final site. They are intended to match the look of <a href="https://www.jmmech.com/">jmmech.com</a>.</p>
+      <div class="table-wrap">
+        <table>
+          <caption>Site colors and where they are used</caption>
+          <thead>
+            <tr><th scope="col">Sample</th><th scope="col">Name</th><th scope="col">Hex</th><th scope="col">Used for</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="swatch navy"></span></td><th scope="row">Navy</th><td>#0D2B45</td><td>Header, footer, headings</td></tr>
+            <tr><td><span class="swatch blue"></span></td><th scope="row">Blue</th><td>#1565A8</td><td>Links, buttons, borders</td></tr>
+            <tr><td><span class="swatch amber"></span></td><th scope="row">Amber</th><td>#F5A623</td><td>Accents, highlights, active states</td></tr>
+            <tr><td><span class="swatch light"></span></td><th scope="row">Light Gray</th><td>#F3F6F9</td><td>Page and card backgrounds</td></tr>
+            <tr><td><span class="swatch text"></span></td><th scope="row">Charcoal</th><td>#1B1F23</td><td>Paragraph text</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="typography">
+      <h2>Typography</h2>
+      <p>Two fonts from Google Fonts, each with a fallback.</p>
+      <div class="type-sample">
+        <p class="heading-font">Montserrat Bold</p>
+        <p>Used for the site name, all headings, buttons, and navigation links.</p>
+      </div>
+      <div class="type-sample">
+        <p class="body-font">Open Sans Regular</p>
+        <p>Used for paragraphs, lists, tables, and standards text so long instructions stay easy to read.</p>
+      </div>
+    </section>
+
+    <section id="wireframes">
+      <h2>Wireframes</h2>
+      <p>Home page layout in mobile and desktop views. The home page holds the interactive part list that links to each part's standards page.</p>
+      <div class="wireframes">
+        <figure>
+          <svg viewBox="0 0 220 400" role="img" aria-labelledby="mobile-title">
+            <title id="mobile-title">Mobile home page wireframe</title>
+            <rect class="wf" x="5" y="5" width="210" height="390"/>
+            <rect class="wf-dark" x="5" y="5" width="210" height="44"/>
+            <rect class="wf-accent" x="15" y="17" width="20" height="20"/>
+            <rect class="wf-accent" x="170" y="19" width="32" height="4"/>
+            <rect class="wf-accent" x="170" y="27" width="32" height="4"/>
+            <rect class="wf" x="15" y="60" width="190" height="80"/>
+            <text x="110" y="105" text-anchor="middle">Intro and search</text>
+            <rect class="wf" x="15" y="152" width="190" height="28"/>
+            <text x="110" y="170" text-anchor="middle">Part 1</text>
+            <rect class="wf" x="15" y="188" width="190" height="28"/>
+            <text x="110" y="206" text-anchor="middle">Part 2</text>
+            <rect class="wf" x="15" y="224" width="190" height="28"/>
+            <text x="110" y="242" text-anchor="middle">Part 3</text>
+            <rect class="wf" x="15" y="260" width="190" height="28"/>
+            <text x="110" y="278" text-anchor="middle">Part 4</text>
+            <rect class="wf" x="15" y="300" width="190" height="60"/>
+            <text x="110" y="334" text-anchor="middle">Quality tips</text>
+            <rect class="wf-dark" x="5" y="368" width="210" height="27"/>
+          </svg>
+          <figcaption>Mobile: one column, with the part list stacked under the intro.</figcaption>
+        </figure>
+        <figure>
+          <svg viewBox="0 0 600 400" role="img" aria-labelledby="desktop-title">
+            <title id="desktop-title">Desktop home page wireframe</title>
+            <rect class="wf" x="5" y="5" width="590" height="390"/>
+            <rect class="wf-dark" x="5" y="5" width="590" height="44"/>
+            <rect class="wf-accent" x="20" y="17" width="20" height="20"/>
+            <rect class="wf-accent" x="380" y="23" width="50" height="6"/>
+            <rect class="wf-accent" x="450" y="23" width="50" height="6"/>
+            <rect class="wf-accent" x="520" y="23" width="50" height="6"/>
+            <rect class="wf" x="20" y="60" width="560" height="80"/>
+            <text x="300" y="105" text-anchor="middle">Intro and search</text>
+            <rect class="wf" x="20" y="152" width="200" height="190"/>
+            <text x="120" y="252" text-anchor="middle">Interactive part list</text>
+            <rect class="wf" x="232" y="152" width="170" height="190"/>
+            <text x="317" y="252" text-anchor="middle">Standards overview</text>
+            <rect class="wf" x="414" y="152" width="166" height="190"/>
+            <text x="497" y="252" text-anchor="middle">Quality tips</text>
+            <rect class="wf-dark" x="5" y="358" width="590" height="37"/>
+          </svg>
+          <figcaption>Desktop: the part list sits beside the overview and tips in three columns.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 JM Part Standards Hub | WDD 131 Project</p>
+  </footer>
+</body>
+</html>
