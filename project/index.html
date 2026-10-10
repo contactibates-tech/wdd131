@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Pick a part and see the build standards and quality requirements for it.">
+  <title>JM Part Standards Hub | Home</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body data-page="home">
+  <header>
+    <a class="brand" href="index.html"><img src="images/logo.jpg" alt="" width="56" height="56"><span>JM Part Standards Hub</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="index.html#parts">Parts</a></li>
+        <li><a href="contact.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Build it right the first time</h1>
+      <p>Choose a part to see how we build it and what quality inspectors will check.</p>
+    </section>
+    <section id="recent" hidden>
+      <h2>Recently viewed</h2>
+      <ul id="recent-list" class="inline-list"></ul>
+    </section>
+    <section id="parts">
+      <h2>Find a part</h2>
+      <form class="filters" role="search" onsubmit="return false">
+        <div>
+          <label for="search">Search parts</label>
+          <input type="search" id="search" name="search" placeholder="Try elbow or duct">
+        </div>
+        <div>
+          <label for="category">Category</label>
+          <select id="category" name="category"></select>
+        </div>
+      </form>
+      <p id="status" role="status"></p>
+      <ul id="part-list" class="grid"></ul>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 JM Part Standards Hub | <a href="references.html">References</a></p>
+  </footer>
+  <script src="scripts/parts.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Build standards and quality checklist for a selected part.">
+  <title>JM Part Standards Hub | Part Standards</title>
+  <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body data-page="part">
+  <header>
+    <a class="brand" href="index.html"><img src="images/logo.jpg" alt="" width="56" height="56"><span>JM Part Standards Hub</span></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#parts">Parts</a></li>
+        <li><a href="contact.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="part-content">
+    <p><a href="index.html#parts">Back to all parts</a></p>
+    <h1 id="part-name">Part standards</h1>
+    <p id="part-summary"></p>
+    <section>
+      <h2>Build standards</h2>
+      <ol id="standards"></ol>
+    </section>
+    <section>
+      <h2>Quality checklist</h2>
+      <p>Your progress is saved on this device.</p>
+      <ul id="checklist" class="checklist"></ul>
+      <p id="progress" role="status"></p>
+      <button type="button" id="reset">Clear checklist</button>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 JM Part Standards Hub | <a href="references.html">References</a></p>
+  </footer>
+  <script src="scripts/parts.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

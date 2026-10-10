@@ -1,0 +1,117 @@
+:root {
+  --navy: #0d2b45;
+  --blue: #1565a8;
+  --amber: #f5a623;
+  --light: #f3f6f9;
+  --text: #1b1f23;
+  --white: #ffffff;
+  --font-heading: "Montserrat", Arial, sans-serif;
+  --font-body: "Open Sans", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--light);
+}
+
+h1, h2, h3, nav a, label, legend, button, .brand {
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+h1, h2, h3 { color: var(--navy); line-height: 1.2; }
+a { color: var(--blue); }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* Header, nav, footer */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--navy);
+  border-bottom: 4px solid var(--amber);
+}
+
+.brand { display: flex; align-items: center; gap: 0.75rem; color: var(--white); text-decoration: none; font-size: 1.1rem; }
+
+nav ul { display: flex; gap: 1.25rem; margin: 0; padding: 0; list-style: none; }
+nav a { color: var(--white); text-decoration: none; padding: 0.25rem 0; }
+nav a:hover, nav a[aria-current="page"] { border-bottom: 3px solid var(--amber); }
+
+footer { padding: 1rem; text-align: center; color: var(--white); background-color: var(--navy); }
+footer p { margin: 0; }
+footer a { color: var(--amber); }
+
+/* Layout */
+main { max-width: 64rem; margin: 0 auto; padding: 1rem; }
+
+section {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--white);
+  border-left: 6px solid var(--blue);
+}
+
+.hero { padding: 2rem 1.25rem; color: var(--white); background-color: var(--navy); border-left-color: var(--amber); }
+.hero h1 { margin-top: 0; color: var(--white); font-size: 1.75rem; }
+.hero p { max-width: 40rem; margin-bottom: 0; }
+
+/* Part list */
+.filters { display: flex; flex-wrap: wrap; gap: 1rem; }
+.filters div { flex: 1 1 14rem; }
+
+label, legend { display: block; margin-bottom: 0.25rem; color: var(--navy); }
+input[type="text"], input[type="email"], input[type="search"], select, textarea {
+  width: 100%;
+  padding: 0.6rem;
+  font: inherit;
+  border: 2px solid var(--navy);
+  background-color: var(--white);
+}
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.card { background-color: var(--light); border: 2px solid var(--navy); }
+.card a { display: block; height: 100%; padding: 1rem; color: var(--text); text-decoration: none; }
+.card a:hover, .card a:focus-visible { background-color: var(--white); border-color: var(--amber); }
+.card img { display: block; margin-bottom: 0.5rem; }
+.card h3 { margin: 0 0 0.25rem; }
+.card p { margin: 0 0 0.5rem; }
+
+.tag { display: inline-block; padding: 0.1rem 0.6rem; font-size: 0.875rem; font-weight: 600; background-color: var(--amber); color: var(--text); }
+.inline-list { display: flex; flex-wrap: wrap; gap: 1rem; margin: 0; padding: 0; list-style: none; }
+
+/* Part page and form */
+ol li, .checklist li { margin-bottom: 0.5rem; }
+.checklist { padding: 0; list-style: none; }
+.checklist label, fieldset label { display: inline-flex; gap: 0.5rem; align-items: center; font-family: var(--font-body); font-weight: 400; color: var(--text); }
+input[type="checkbox"], input[type="radio"] { width: 1.25rem; height: 1.25rem; accent-color: var(--blue); }
+
+form div, fieldset { margin-bottom: 1rem; }
+fieldset { display: flex; flex-wrap: wrap; gap: 1rem; border: 2px solid var(--navy); }
+
+button {
+  padding: 0.7rem 1.25rem;
+  font-size: 1rem;
+  color: var(--white);
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
+  cursor: pointer;
+}
+button:hover { background-color: var(--navy); border-color: var(--navy); }
+
+@media (min-width: 48rem) {
+  main { padding: 1.5rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .brand { font-size: 1.4rem; }
+}
